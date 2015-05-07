@@ -1,0 +1,16 @@
+---
+layout: site
+title: Category
+custom_title: "Category: %ut"
+trail: [main]
+---
+{% assign category_name = page.name | remove: 'category-' | remove: '.html' %}
+<ul>
+{% for page in site.pages %}
+  {% for cat in page.categories %}
+    {% if cat == category_name %}
+      <li><a href="{{page.url | remove: "/"}}">{{page.title}}</a></li>
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+</ul>

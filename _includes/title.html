@@ -1,0 +1,9 @@
+{% if page.custom_title %}
+    {% assign i_title = page.title | remove: ".html" %}
+    {% assign i_urltitle = page.url | remove: ".html" | split: "-" | last | capitalize %}
+    {{ include.prefix }}{{ page.custom_title | replace: "%ut", i_urltitle | replace: "%t", i_title }}
+{% elsif page.title %}
+    {{ include.prefix }}{{ page.title }}
+{% else %}
+    {{ include.default }}
+{% endif %}

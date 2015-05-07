@@ -1,0 +1,11 @@
+<div class="page-trail">
+&laquo;
+{% for item in page.trail %}
+  {% if item == "main" || item == "index" %}
+    <a href="index.html">Main</a>
+  {% else %}
+    <a href="{{item}}.html">{{item | capitalize}}</a>
+  {% endif %}
+  {% if forloop.last == false %} | {% endif %}
+{% endfor %}
+</div>

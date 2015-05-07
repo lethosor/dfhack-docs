@@ -10,23 +10,33 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <title>DFHack documentation{% if page.title %}: {{page.title}} {% endif %}</title>
+    <title>{% include title.html default="DFHack documentation" prefix="DFHack documentation: " %}</title>
   </head>
 
   <body>
     <div id="container">
       <div class="inner">
-
         <header>
-          <h1>{% if page.title %}{{page.title}}{% else %}DFHack documentation{% endif %}</h1>
-          <h2></h2>
+          <h1>{% include title.html default="DFHack documentation" %}</h1>
+          {% if page.trail %}
+            {% include trail.html %}
+          {% endif %}
         </header>
 
         <section id="main_content">
           {{ content }}
+
         </section>
 
         <footer>
+        {% if page.categories %}
+          Categories:
+          {% for cat in page.categories %}
+            <a href="category-{{cat}}.html">{{cat | capitalize}}</a>
+            {% if forloop.last == false %} | {% endif %}
+          {% endfor %}
+          <br>
+        {% endif %}
           DFHack documentation is maintained by <a href="https://github.com/lethosor/dfhack-docs/graphs/contributors">contributors</a><br>
           Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
         </footer>
