@@ -1,0 +1,54 @@
+---
+layout: markdown-page
+title: Setup
+---
+DFHack is currently hosted on [GitHub][github]
+
+Recent releases are available in source and binary formats [on the releases page][releases],
+while the binaries for releases 0.40.15-r1 to 0.34.11-r4 are on [DFFD][DFFD].
+Even older versions are available [here][dethware].
+
+All new releases are announced in the [Bay 12 Forums thread][bay12], which is also a good place for discussion and questions.
+
+[github]: http://www.github.com/DFHack/dfhack
+[releases]: http://github.com/DFHack/dfhack/releases
+[DFFD]: http://dffd.bay12games.com/search.php?string=DFHack&id=15
+[dethware]: http://dethware.org/dfhack/download
+[bay12]: http://www.bay12forums.com/smf/index.php?topic=139553
+
+## Compatibility
+
+DFHack is available for Windows (XP or later), Linux (any modern distribution), or OS X (10.6.8 and up).
+
+Most releases only support the version of DF mentioned in their title - for example, DFHack 0.40.24-r2 only supports DF 0.40.24 - but some releases support earlier DF versions as well. Wherever possible, use the latest version built for the target version of DF.
+
+On Windows, DFHack is compatible with the SDL version of DF, but not the legacy version.
+
+It is also possible to use the Windows DFHack with Wine under Linux and OS X.
+
+## Installation/Removal
+
+Installing DFHack involves copying files into your DF folder. Copy the files from a release archive so that:
+
+* On Windows, SDL.dll is replaced
+* On Linux and OS X, the 'dfhack' script is placed in the same folder as the 'df' script
+  * The stonesense plugin might require some additional libraries on Linux.
+
+Uninstalling is basically the same, in reverse:
+
+* On Windows, first delete SDL.dll and rename SDLreal.dll to SDL.dll. Then remove the other DFHack files
+* On Linux and OS X, Remove the DFHack files.
+
+If any of the plugins or DFHack itself refuses to load, check the stderr.log file created in your DF folder.
+
+## Getting started
+
+If DFHack is installed correctly, it will automatically pop up a console window once DF is started as usual on windows. Linux and Mac OS X require running the dfhack script from the terminal, and will use that terminal for the console.
+
+**NOTE:**
+The `dfhack-run` executable is used for calling DFHack commands in an already-running
+DF+DFHack instance from external OS scripts and programs, and is not the way how you use DFHack normally.
+
+DFHack has a lot of features, which can be accessed by typing commands in the console, or by mapping them to keyboard shortcuts. Most of the newer and more user-friendly tools are designed to be at least partially used via the latter way.
+
+In order to set keybindings, you have to create a text configuration file called ``dfhack.init``; the installation comes with an example version called ``dfhack.init-example``, which is fully functional, covers all of the recent features and can be simply renamed to ``dfhack.init``. You are encouraged to look through it to learn which features it makes available under which key combinations.
