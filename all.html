@@ -3,15 +3,17 @@ layout: site
 title: Index
 trail: [main]
 ---
+<h2>Categories</h2>
+<ul>
 {% for cat in site.category-list %}
-  <h2>{{cat | capitalize}}</h2>
-  <ul>
-  {% for p in site.pages %}
-    {% for pagecat in p.categories %}
-      {% if cat == pagecat %}
-        <li><a href="{{p.url | remove: "/"}}">{{p.title}}</a></li>
-      {% endif %}
-    {% endfor %}
-  {% endfor %}
-  </ul>
+  <li><a href="category-{{cat}}.html">{{cat | capitalize}}</a></li>
 {% endfor %}
+</ul>
+<h2>All pages</h2>
+<ul>
+{% for p in site.pages %}
+  {% if p.title %}
+    <li><a href="{{p.url | remove: "/"}}">{{p.title}}</a></li>
+  {% endif %}
+{% endfor %}
+</ul>

@@ -2,15 +2,19 @@
 layout: site
 title: Category
 custom_title: "Category: %ut"
-trail: [main]
+trail: [main, all]
 ---
 {% assign category_name = page.name | remove: 'category-' | remove: '.html' %}
+{% assign category_empty = true %}
 <ul>
 {% for page in site.pages %}
   {% for cat in page.categories %}
     {% if cat == category_name %}
-      <li><a href="{{page.url | remove: "/"}}">{{page.title}}</a></li>
+      <li><a href="{{page.url | remove: "/"}}">{{page.title}}</a></li>{% assign category_empty = false %}
     {% endif %}
   {% endfor %}
 {% endfor %}
 </ul>
+{% if category_empty %}
+No pages in category
+{% endif %}

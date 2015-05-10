@@ -3,6 +3,8 @@
 {% for item in page.trail %}
   {% if item == "main" || item == "index" %}
     <a href="index.html">Main</a>
+  {% elsif item == "all" %}
+    <a href="all.html">Index</a>
   {% else %}
     <a href="{{item}}.html">{{item | capitalize}}</a>
   {% endif %}
