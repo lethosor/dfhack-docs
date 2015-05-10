@@ -1,0 +1,37 @@
+---
+layout: markdown-page
+trail: [main]
+title: Usage
+categories: [general]
+---
+
+DFHack basically extends what DF can do with something similar to the drop-down
+console found in Quake engine games. On Windows, this is a separate command line
+window. On Linux and OS X, the terminal used to launch the dfhack script is taken over
+(so, make sure you start from a terminal). Basic interaction with dfhack
+involves entering commands into the console. For some basic instructions,
+use the 'help' command. To list all possible commands, use the `ls` command.
+Many commands have their own help or detailed description. You can use
+`help command` (or sometimes `command help` or `command ?`) to show that.
+
+The command line has some nice line editing capabilities, including history
+that's preserved between different runs of DF (use up/down keys to go through
+the history).
+
+The second way to interact with DFHack is to bind the available commands
+to in-game hotkeys. The old way to do this is via the hotkey/zoom menu (normally
+opened with the 'H' key). Binding the commands is done by assigning a command as
+a hotkey name (with 'n').
+
+A new and more flexible way is the keybinding command in the dfhack console.
+However, bindings created this way are not automatically remembered between runs
+of the game, so it becomes necessary to use the dfhack.init file to ensure that
+they are re-created every time it is loaded.
+
+Interactive commands like 'liquids' cannot be used as hotkeys.
+
+Most of the commands come from plugins. Those reside in 'hack/plugins/'.
+
+## See also
+
+* [Binary patching](binary-patching.html)
