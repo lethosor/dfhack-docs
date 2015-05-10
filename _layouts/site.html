@@ -17,6 +17,7 @@
     <div id="container">
       <div class="inner">
         <header>
+          <div class="header-version">DFHack {{site.dfhack-version}}</div>
           <h1>{% include title.html default="DFHack documentation" %}</h1>
           {% if page.trail %}
             {% include trail.html %}
@@ -25,7 +26,6 @@
 
         <section id="main_content">
           {{ content }}
-
         </section>
 
         <footer>
